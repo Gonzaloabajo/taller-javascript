@@ -10,7 +10,7 @@
 //   esMayorDeEdad(17) → false
 // -------------------------------------------------------------
 export function esMayorDeEdad(edad) {
-  // Escribe tu código aquí
+  return edad >= 18;
 }
 
 // -------------------------------------------------------------
@@ -24,7 +24,19 @@ export function esMayorDeEdad(edad) {
 // Pista: descarta primero las notas no válidas.
 // -------------------------------------------------------------
 export function calificar(nota) {
-  // Escribe tu código aquí
+   if (nota < 0 || nota > 10) {
+    return 'Nota no válida';
+  }
+
+  if (nota < 5) {
+    return 'Suspenso';
+  } else if (nota < 7) {
+    return 'Aprobado';
+  } else if (nota < 9) {
+    return 'Notable';
+  } else {
+    return 'Sobresaliente';
+  }
 }
 
 // -------------------------------------------------------------
@@ -36,7 +48,15 @@ export function calificar(nota) {
 //   el resto          → 10
 // -------------------------------------------------------------
 export function precioEntrada(edad) {
-  // Escribe tu código aquí
+  if (edad < 4) {
+    return 0;
+  } else if (edad < 18) {
+    return 5;
+  } else if (edad >= 65) {
+    return 6;
+  } else {
+    return 10;
+  }
 }
 
 // -------------------------------------------------------------
@@ -48,7 +68,7 @@ export function precioEntrada(edad) {
 // Pista: && || ! (y paréntesis)
 // -------------------------------------------------------------
 export function accesoPermitido(esAdmin, esPropietario, estaBloqueado) {
-  // Escribe tu código aquí
+  return (esAdmin || esPropietario) && !estaBloqueado;
 }
 
 // -------------------------------------------------------------
@@ -58,9 +78,17 @@ export function accesoPermitido(esAdmin, esPropietario, estaBloqueado) {
 // Usa switch.
 // -------------------------------------------------------------
 export function nombreDelDia(numero) {
-  // Escribe tu código aquí
+  switch (numero) {
+    case 1: return 'lunes';
+    case 2: return 'martes';
+    case 3: return 'miércoles';
+    case 4: return 'jueves';
+    case 5: return 'viernes';
+    case 6: return 'sábado';
+    case 7: return 'domingo';
+    default: return 'desconocido';
+  }
 }
-
 // -------------------------------------------------------------
 // Ejercicio 6 · FizzBuzz (un clásico de las entrevistas)
 // Devuelve:
@@ -71,7 +99,15 @@ export function nombreDelDia(numero) {
 // Pista: el orden de las condiciones importa.
 // -------------------------------------------------------------
 export function fizzBuzz(numero) {
-  // Escribe tu código aquí
+  if (numero % 15 === 0) {
+    return 'FizzBuzz';
+  } else if (numero % 3 === 0) {
+    return 'Fizz';
+  } else if (numero % 5 === 0) {
+    return 'Buzz';
+  } else {
+    return String(numero);
+  }
 }
 
 // -------------------------------------------------------------
@@ -80,7 +116,7 @@ export function fizzBuzz(numero) {
 // Reto: hazlo en una sola línea con el operador ternario (puedes encadenar dos).
 // -------------------------------------------------------------
 export function signo(numero) {
-  // Escribe tu código aquí
+  return numero > 0 ? 'positivo' : numero < 0 ? 'negativo' : 'cero';
 }
 
 // -------------------------------------------------------------
@@ -92,7 +128,7 @@ export function signo(numero) {
 //   esBisiesto(2000) → true
 // -------------------------------------------------------------
 export function esBisiesto(anio) {
-  // Escribe tu código aquí
+  return anio % 4 === 0 && (anio % 100 !== 0 || anio % 400 === 0);
 }
 
 // =============================================================
