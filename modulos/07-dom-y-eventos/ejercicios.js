@@ -10,20 +10,26 @@
 // Ejercicio 1 · Cambiar el título
 // Cambia el texto del elemento #titulo por: ¡Hola, DOM!
 // -------------------------------------------------------------
-// Escribe tu código aquí
+document.querySelector('#titulo').textContent = '¡Hola, DOM!';
 
 // -------------------------------------------------------------
 // Ejercicio 2 · Destacar un párrafo
 // Añade la clase "destacado" al párrafo #intro.
 // -------------------------------------------------------------
-// Escribe tu código aquí
+document.querySelector('#intro').classList.add('destacado');
 
 // -------------------------------------------------------------
 // Ejercicio 3 · Pintar una lista
 // Crea un <li> por cada fruta del array y mételo en #lista-frutas.
 // -------------------------------------------------------------
 const frutas = ['Manzana', 'Plátano', 'Uvas', 'Naranja'];
-// Escribe tu código aquí
+const listaFrutas = document.querySelector('#lista-frutas');
+
+frutas.forEach(fruta => {
+  const li = document.createElement('li');
+  li.textContent = fruta;
+  listaFrutas.appendChild(li);
+});
 
 // -------------------------------------------------------------
 // Ejercicio 4 · Contador
@@ -31,7 +37,18 @@ const frutas = ['Manzana', 'Plátano', 'Uvas', 'Naranja'];
 // - Al hacer clic en #btn-reiniciar, vuelve a 0.
 // Pista: guarda la cuenta en una variable con let.
 // -------------------------------------------------------------
-// Escribe tu código aquí
+let cuenta = 0;
+const contador = document.querySelector('#contador');
+
+document.querySelector('#btn-sumar').addEventListener('click', () => {
+  cuenta++;
+  contador.textContent = cuenta;
+});
+
+document.querySelector('#btn-reiniciar').addEventListener('click', () => {
+  cuenta = 0;
+  contador.textContent = cuenta;
+});
 
 // -------------------------------------------------------------
 // Ejercicio 5 · Saludo en directo
@@ -40,14 +57,22 @@ const frutas = ['Manzana', 'Plátano', 'Uvas', 'Naranja'];
 // Si el input está vacío (o solo tiene espacios): 'Hola, desconocido'
 // Pista: evento 'input' y .trim()
 // -------------------------------------------------------------
-// Escribe tu código aquí
+const inputNombre = document.querySelector('#input-nombre');
+const saludo = document.querySelector('#saludo');
+
+inputNombre.addEventListener('input', () => {
+  const nombre = inputNombre.value.trim();
+  saludo.textContent = `Hola, ${nombre || 'desconocido'}`;
+});
 
 // -------------------------------------------------------------
 // Ejercicio 6 · Modo oscuro
 // Al hacer clic en #btn-tema, pon o quita la clase "oscuro" del <body>.
 // Pista: document.body y classList.toggle
 // -------------------------------------------------------------
-// Escribe tu código aquí
+document.querySelector('#btn-tema').addEventListener('click', () => {
+  document.body.classList.toggle('oscuro');
+});
 
 // -------------------------------------------------------------
 // Ejercicio 7 · Lista de tareas
@@ -57,7 +82,23 @@ const frutas = ['Manzana', 'Plátano', 'Uvas', 'Naranja'];
 //      crea un <li> con ese texto y añádelo a #lista-tareas.
 //   3. Vacía el input.
 // -------------------------------------------------------------
-// Escribe tu código aquí
+const formulario = document.querySelector('#form-tarea');
+const inputTarea = document.querySelector('#input-tarea');
+const listaTareas = document.querySelector('#lista-tareas');
+
+formulario.addEventListener('submit', (evento) => {
+  evento.preventDefault();
+
+  const texto = inputTarea.value.trim();
+
+  if (texto !== '') {
+    const li = document.createElement('li');
+    li.textContent = texto;
+    listaTareas.appendChild(li);
+  }
+
+  inputTarea.value = '';
+});
 
 // -------------------------------------------------------------
 // Ejercicio 8 · Tachar tareas (extra)
@@ -66,4 +107,10 @@ const frutas = ['Manzana', 'Plátano', 'Uvas', 'Naranja'];
 // las tareas nuevas.
 // Pista: delegación de eventos (mira el README).
 // -------------------------------------------------------------
-// Escribe tu código aquí
+listaTareas.addEventListener('click', (evento) => {
+  const tarea = evento.target.closest('li');
+
+  if (tarea && listaTareas.contains(tarea)) {
+    tarea.classList.toggle('completada');
+  }
+});
