@@ -1,13 +1,43 @@
 [
   {
-    "id": 1,
-    "titulo": "Lista de tareas",
-    "descripcion": "Añade, tacha y gestiona tareas desde el navegador.",
-    "detalle": "Mi primera aplicación con JavaScript: formulario, eventos y manipulación del DOM. La hice en el módulo 07 del taller.",
+    "id": 7,
+    "titulo": "Q4 Profit Guard",
+    "descripcion": "Calculadora para saber si un descuento realmente deja margen antes de lanzar una campaña.",
+    "detalle": "Empecé Q4 Profit Guard para calcular el beneficio real de un pedido antes de aplicar descuentos de Black Friday o Navidad. La versión web permite introducir precio, coste del producto, comisiones y publicidad. También preparé una versión para Windows. Es un prototipo en el que he trabajado tanto la parte del cálculo como la distribución del programa.",
     "tecnologias": [
+      "JavaScript",
       "HTML",
       "CSS",
-      "JavaScript"
+      "Windows"
+    ],
+    "destacado": true,
+    "demo": "",
+    "codigo": ""
+  },
+  {
+    "id": 8,
+    "titulo": "Sistema de licencias para Windows",
+    "descripcion": "Activación con claves, comprobación de licencias y vinculación al equipo para Q4 Profit Guard.",
+    "detalle": "Para la versión de escritorio de Q4 Profit Guard monté un sistema de licencias con Cloudflare Workers y una base de datos D1. La aplicación comprueba la clave y asocia la activación a un identificador del dispositivo. También preparé el webhook de Stripe para gestionar el pago y la licencia, y publiqué versiones mediante GitHub Releases. Me sirvió para trabajar con una parte de backend que no había tocado en los ejercicios del taller.",
+    "tecnologias": [
+      "Cloudflare Workers",
+      "D1",
+      "Stripe",
+      "Windows"
+    ],
+    "destacado": true,
+    "demo": "",
+    "codigo": ""
+  },
+  {
+    "id": 1,
+    "titulo": "Proxy con Squid",
+    "descripcion": "Configuración de accesos por usuario, IP, horario y páginas permitidas o bloqueadas.",
+    "detalle": "En una práctica de Codearts Solutions amplié un proxy Squid sobre Ubuntu Server. Configuré usuarios, ACL, listas de dominios, horarios, firewall y caché. Después hice pruebas de accesos permitidos y bloqueados y revisé los registros para comprobar los resultados.",
+    "tecnologias": [
+      "Linux",
+      "Redes",
+      "Seguridad"
     ],
     "destacado": true,
     "demo": "",
@@ -15,14 +45,13 @@
   },
   {
     "id": 2,
-    "titulo": "Este portfolio",
-    "descripcion": "Web personal que carga los proyectos desde un JSON y permite filtrarlos.",
-    "detalle": "Construida desde una plantilla durante el taller de JavaScript: fetch, filtros, buscador, validación de formularios y modo oscuro.",
+    "titulo": "Laboratorio de Windows Server 2022",
+    "descripcion": "Usuarios, permisos, DNS, IIS y acceso remoto en un entorno virtual.",
+    "detalle": "He trabajado con Windows Server 2022 en VMware. Entre las tareas estuvieron crear usuarios y grupos, configurar permisos, instalar IIS y DNS, habilitar RDP y revisar el firewall. También hice algunas comprobaciones y tareas de mantenimiento con PowerShell.",
     "tecnologias": [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "JSON"
+      "Windows Server",
+      "Redes",
+      "PowerShell"
     ],
     "destacado": true,
     "demo": "",
@@ -30,12 +59,13 @@
   },
   {
     "id": 3,
-    "titulo": "Calculadora de propinas",
-    "descripcion": "Calcula cuánto paga cada persona al dividir la cuenta.",
-    "detalle": "Práctica de operadores, conversión de tipos y eventos input para recalcular en directo.",
+    "titulo": "Prácticas con Ubuntu Server",
+    "descripcion": "Montaje y comprobación de servicios de red desde la terminal.",
+    "detalle": "He utilizado Ubuntu Server en máquinas virtuales para practicar la configuración de red, servicios como DHCP, tareas programadas y administración desde Bash. Las pruebas de conectividad y los registros me han ayudado a localizar errores y comprobar cada cambio.",
     "tecnologias": [
-      "HTML",
-      "JavaScript"
+      "Linux",
+      "Redes",
+      "Bash"
     ],
     "destacado": false,
     "demo": "",
@@ -43,26 +73,41 @@
   },
   {
     "id": 4,
-    "titulo": "Landing page de una cafetería",
-    "descripcion": "Página de presentación responsive con carta y mapa.",
-    "detalle": "Maquetación con Flexbox y Grid, adaptada a móvil.",
+    "titulo": "Taller de JavaScript",
+    "descripcion": "Ocho módulos de ejercicios, desde variables hasta DOM y asincronía.",
+    "detalle": "He completado los ocho módulos del taller, también los ejercicios extra. He practicado variables, condiciones, bucles, funciones, arrays, objetos, eventos y promesas. El código está guardado en mi repositorio de GitHub.",
     "tecnologias": [
+      "JavaScript",
       "HTML",
-      "CSS"
+      "Git"
     ],
     "destacado": false,
     "demo": "",
-    "codigo": ""
+    "codigo": "https://github.com/Gonzaloabajo/taller-javascript/tree/main/modulos"
   },
   {
     "id": 5,
-    "titulo": "API de chistes",
-    "descripcion": "Pequeño servidor que devuelve un chiste aleatorio en JSON.",
-    "detalle": "Primer contacto con Node.js y con cómo funciona una API por dentro.",
+    "titulo": "Portfolio personal",
+    "descripcion": "Web con proyectos, búsqueda, filtros y modo oscuro.",
+    "detalle": "He utilizado HTML, CSS y JavaScript para reunir mis proyectos en una sola web. La información se carga desde un archivo JSON. Añadí filtros por tecnología, búsqueda, ventanas de detalle y un formulario que valida los campos sin enviar mensajes.",
     "tecnologias": [
-      "Node",
+      "HTML",
+      "CSS",
       "JavaScript",
       "JSON"
+    ],
+    "destacado": false,
+    "demo": "./",
+    "codigo": "https://github.com/Gonzaloabajo/taller-javascript/tree/main/proyecto-final"
+  },
+  {
+    "id": 6,
+    "titulo": "VYNK Solutions · prototipo",
+    "descripcion": "Flujo de recepción digital para organizar solicitudes de pacientes de clínicas dentales.",
+    "detalle": "Probé una idea de recepción digital para clínicas dentales usando Tidio. Preparé un recorrido con preguntas sobre tratamientos y preferencias de contacto para que la clínica recibiera la consulta con más contexto. Fue un prototipo y no llegó a implantarse en clientes.",
+    "tecnologias": [
+      "Automatización",
+      "No-code"
     ],
     "destacado": false,
     "demo": "",

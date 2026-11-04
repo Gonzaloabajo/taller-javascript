@@ -3,15 +3,15 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Mi portfolio</title>
-    <meta name="description" content="Portfolio personal: proyectos, habilidades y contacto." />
+    <title>Gonzalo Abajo · Portfolio</title>
+    <meta name="description" content="Portfolio de Gonzalo Abajo: sistemas, redes, JavaScript y proyectos propios." />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%235b5bd6'/></svg>" />
     <link rel="stylesheet" href="css/estilos.css" />
   </head>
   <body>
     <header class="cabecera">
       <nav class="nav contenedor" aria-label="Principal">
-        <a href="#inicio" class="logo" id="logo">TN</a>
+        <a href="#inicio" class="logo" id="logo">GA</a>
         <ul class="menu">
           <li><a href="#sobre-mi">Sobre mí</a></li>
           <li><a href="#proyectos">Proyectos</a></li>
@@ -24,24 +24,21 @@
     </header>
 
     <main>
-      <!-- ========== INICIO ========== -->
-      <section class="hero contenedor" id="inicio">
+<section class="hero contenedor" id="inicio">
         <p class="hero-saludo">Hola, soy</p>
-        <h1 id="perfil-nombre">Tu Nombre</h1>
-        <p class="hero-rol" id="perfil-rol">Tu rol</p>
-        <p class="hero-intro" id="perfil-intro">Una frase que te defina.</p>
+        <h1 id="perfil-nombre">Gonzalo Abajo</h1>
+        <p class="hero-rol" id="perfil-rol">Sistemas Microinformáticos y Redes · proyectos de sistemas y web</p>
+        <p class="hero-intro" id="perfil-intro">Desde servidores y redes hasta proyectos de software.</p>
         <div class="hero-acciones">
           <a class="boton" href="#proyectos">Ver proyectos</a>
           <a class="boton boton-secundario" href="#contacto">Hablemos</a>
         </div>
       </section>
-
-      <!-- ========== SOBRE MÍ ========== -->
-      <section class="seccion contenedor revelar" id="sobre-mi">
+<section class="seccion contenedor revelar" id="sobre-mi">
         <h2 class="seccion-titulo">Sobre mí</h2>
         <div class="sobre-mi">
           <div class="sobre-mi-texto" id="perfil-sobre-mi">
-            <p>Aquí irá tu presentación (Nivel 1).</p>
+            <p>Estoy estudiando SMR y desarrollando proyectos técnicos por mi cuenta.</p>
           </div>
           <div>
             <h3>Habilidades</h3>
@@ -49,9 +46,7 @@
           </div>
         </div>
       </section>
-
-      <!-- ========== PROYECTOS ========== -->
-      <section class="seccion contenedor" id="proyectos">
+<section class="seccion contenedor" id="proyectos">
         <h2 class="seccion-titulo revelar">Proyectos</h2>
         <div class="herramientas">
           <div class="filtros" id="filtros" role="group" aria-label="Filtrar por tecnología"></div>
@@ -59,16 +54,15 @@
         </div>
         <p class="contador-proyectos" id="contador-proyectos" aria-live="polite"></p>
         <div class="rejilla" id="rejilla-proyectos">
-          <p class="aviso">Aquí aparecerán tus proyectos cuando completes el Nivel 1.</p>
+          <p class="aviso">Cargando proyectos…</p>
         </div>
       </section>
-
-      <!-- ========== CONTACTO ========== -->
-      <section class="seccion contenedor revelar" id="contacto">
+<section class="seccion contenedor revelar" id="contacto">
         <h2 class="seccion-titulo">Contacto</h2>
         <p class="contacto-intro">
-          ¿Tienes una idea, una pregunta o una oferta? Escríbeme a
-          <a id="perfil-email" href="#">tu@email.com</a> o usa el formulario.
+          Si quieres conocer mis proyectos o ponerte en contacto conmigo, puedes encontrarme en
+          <a id="perfil-email" href="https://github.com/Gonzaloabajo">GitHub</a>.
+          El formulario valida los datos localmente, pero no envía mensajes.
         </p>
 
         <form class="formulario" id="form-contacto" novalidate>
@@ -88,9 +82,9 @@
             <p class="error" id="error-mensaje"></p>
           </div>
           <div class="campo-completo">
-            <button class="boton" type="submit">Enviar mensaje</button>
+            <button class="boton" type="submit">Validar mensaje</button>
             <p class="exito" id="form-exito" hidden>
-              ¡Gracias! Te responderé pronto. <small>(Es una demo: el mensaje no se envía a ningún sitio.)</small>
+              Formulario validado correctamente. <small>No se ha enviado ningún mensaje.</small>
             </p>
           </div>
         </form>
@@ -99,13 +93,11 @@
 
     <footer class="pie">
       <div class="contenedor pie-contenido">
-        <p>© <span id="anio">2026</span> <span id="pie-nombre">Tu Nombre</span> · Hecho con HTML, CSS y JavaScript</p>
+        <p>© <span id="anio">2026</span> <span id="pie-nombre">Gonzalo Abajo</span> · Hecho con HTML, CSS y JavaScript</p>
         <ul class="redes" id="perfil-redes"></ul>
       </div>
     </footer>
-
-    <!-- Ventana de detalle de un proyecto (Nivel 3) -->
-    <dialog class="modal" id="modal-proyecto">
+<dialog class="modal" id="modal-proyecto">
       <div id="modal-contenido"></div>
       <button class="boton" id="modal-cerrar" type="button">Cerrar</button>
     </dialog>

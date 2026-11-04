@@ -1,19 +1,12 @@
-/* =============================================================
-   Estilos del portfolio
-   El CSS ya está hecho para que te centres en JavaScript,
-   pero es TU portfolio: cambia colores, fuentes y lo que quieras.
-   Empieza por las variables de :root.
-   ============================================================= */
-
 :root {
   --fondo: #f7f7fb;
   --superficie: #ffffff;
   --texto: #1d1d2b;
   --texto-suave: #5b5b70;
-  --primario: #5b5bd6;
+  --primario: #1769ae;
   --primario-texto: #ffffff;
-  --primario-suave: #ececfb;
-  --acento: #d6338a;
+  --primario-suave: #e7f3fb;
+  --acento: #078e92;
   --borde: #e3e3ee;
   --error: #c92a2a;
   --exito: #1f8a55;
@@ -23,24 +16,21 @@
   color-scheme: light;
 }
 
-/* Tema oscuro: se activa con <html data-tema="oscuro"> (Nivel 3) */
 :root[data-tema='oscuro'] {
   --fondo: #11111a;
   --superficie: #1b1b28;
   --texto: #ececf4;
   --texto-suave: #a3a3b8;
-  --primario: #8b8bf0;
+  --primario: #78c7ff;
   --primario-texto: #11111a;
-  --primario-suave: #26263d;
-  --acento: #f06bb3;
+  --primario-suave: #172f40;
+  --acento: #49d0c7;
   --borde: #2e2e44;
   --error: #ff8787;
   --exito: #63d297;
   --sombra: 0 8px 30px rgba(0, 0, 0, 0.35);
   color-scheme: dark;
 }
-
-/* ---------- Base ---------- */
 
 *,
 *::before,
@@ -81,8 +71,6 @@ h3 {
   width: min(1100px, 100% - 2.5rem);
   margin-inline: auto;
 }
-
-/* ---------- Cabecera ---------- */
 
 .cabecera {
   position: sticky;
@@ -133,7 +121,6 @@ h3 {
   color: var(--primario);
 }
 
-/* Icono de contraste dibujado con CSS: un círculo medio relleno */
 .btn-tema {
   display: grid;
   place-items: center;
@@ -154,8 +141,6 @@ h3 {
   border-radius: 50%;
   background: linear-gradient(90deg, currentColor 50%, transparent 50%);
 }
-
-/* ---------- Hero ---------- */
 
 .hero {
   padding-block: clamp(4rem, 12vw, 8rem) clamp(3rem, 8vw, 5rem);
@@ -196,8 +181,6 @@ h3 {
   margin-top: 2rem;
 }
 
-/* ---------- Botones ---------- */
-
 .boton {
   display: inline-flex;
   align-items: center;
@@ -224,8 +207,6 @@ h3 {
   color: var(--primario);
 }
 
-/* ---------- Secciones ---------- */
-
 .seccion {
   padding-block: clamp(3rem, 8vw, 5rem);
 }
@@ -244,8 +225,6 @@ h3 {
   border-radius: 4px;
   background: linear-gradient(90deg, var(--primario), var(--acento));
 }
-
-/* ---------- Sobre mí ---------- */
 
 .sobre-mi {
   display: grid;
@@ -275,7 +254,6 @@ h3 {
   font-weight: 500;
 }
 
-/* La barra usa la variable --nivel (de 1 a 5) que pones desde JavaScript */
 .nivel {
   position: relative;
   height: 8px;
@@ -292,8 +270,6 @@ h3 {
   border-radius: inherit;
   background: linear-gradient(90deg, var(--primario), var(--acento));
 }
-
-/* ---------- Proyectos ---------- */
 
 .herramientas {
   display: flex;
@@ -377,7 +353,6 @@ h3 {
   transform: translateY(-4px);
 }
 
-/* Franja de color en la parte de arriba de cada tarjeta */
 .tarjeta::before {
   content: '';
   height: 6px;
@@ -465,8 +440,6 @@ h3 {
   }
 }
 
-/* ---------- Contacto ---------- */
-
 .contacto-intro {
   max-width: 40rem;
 }
@@ -526,8 +499,6 @@ h3 {
   font-weight: 600;
 }
 
-/* ---------- Pie ---------- */
-
 .pie {
   margin-top: 3rem;
   padding-block: 2rem;
@@ -556,8 +527,6 @@ h3 {
   list-style: none;
 }
 
-/* ---------- Ventana de detalle (Nivel 3) ---------- */
-
 .modal {
   width: min(32rem, 100% - 2rem);
   padding: 2rem;
@@ -578,10 +547,6 @@ h3 {
   font-size: 1.5rem;
 }
 
-/* ---------- Animaciones al hacer scroll (Nivel 3) ----------
-   Solo se activan cuando JavaScript añade la clase "animaciones" al <html>.
-   Así, si no haces el Nivel 3, todo se ve igual de bien. */
-
 .animaciones .revelar {
   opacity: 0;
   transform: translateY(30px);
@@ -593,7 +558,8 @@ h3 {
   transform: none;
 }
 
-/* ---------- Móvil ---------- */
+:focus-visible { outline: 3px solid var(--acento); outline-offset: 3px; }
+.tarjeta-enlaces .enlace-boton { font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
 
 @media (max-width: 720px) {
   .sobre-mi,
