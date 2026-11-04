@@ -11,9 +11,9 @@
 //   - esEstudiante:  un BOOLEANO (true o false)
 // Ojo: ahora mismo alguna tiene trampa.
 // -------------------------------------------------------------
-export const nombre = '';
-export const edad = '25';
-export const esEstudiante = 'true';
+export const nombre = 'Gonzalo';
+export const edad = 26;
+export const esEstudiante = true;
 
 // -------------------------------------------------------------
 // Ejercicio 2 · ¿De qué tipo es?
@@ -23,7 +23,7 @@ export const esEstudiante = 'true';
 // Pista: typeof
 // -------------------------------------------------------------
 export function tipoDe(valor) {
-  // Escribe tu código aquí
+  return typeof valor;
 }
 
 // -------------------------------------------------------------
@@ -32,7 +32,7 @@ export function tipoDe(valor) {
 //   saludar('Ada', 'Londres') → 'Hola, soy Ada y vivo en Londres.'
 // -------------------------------------------------------------
 export function saludar(nombre, ciudad) {
-  // Escribe tu código aquí
+return `Hola, soy ${nombre} y vivo en ${ciudad}.`
 }
 
 // -------------------------------------------------------------
@@ -43,7 +43,7 @@ export function saludar(nombre, ciudad) {
 // Pista: mira cómo redondear a 2 decimales en el README.
 // -------------------------------------------------------------
 export function precioConIva(precio) {
-  // Escribe tu código aquí
+  return Math.round(precio * 1.21 * 100) / 100;
 }
 
 // -------------------------------------------------------------
@@ -55,7 +55,7 @@ export function precioConIva(precio) {
 // Pista: el operador % (resto).
 // -------------------------------------------------------------
 export function esPar(numero) {
-  // Escribe tu código aquí
+  return numero % 2 === 0;
 }
 
 // -------------------------------------------------------------
@@ -66,7 +66,9 @@ export function esPar(numero) {
 // Pista: Math.floor para los minutos y % para los segundos que sobran.
 // -------------------------------------------------------------
 export function formatearDuracion(segundos) {
-  // Escribe tu código aquí
+  const minutos = Math.floor(segundos / 60);
+  const resto = segundos % 60;
+  return `${minutos} min ${resto} s`;
 }
 
 // -------------------------------------------------------------
@@ -75,7 +77,7 @@ export function formatearDuracion(segundos) {
 //   sumarTextos('5', '10') → 15   (¡no '510'!)
 // -------------------------------------------------------------
 export function sumarTextos(a, b) {
-  // Escribe tu código aquí
+  return Number(a) + Number(b);
 }
 
 // -------------------------------------------------------------
@@ -85,7 +87,7 @@ export function sumarTextos(a, b) {
 //   normalizarEmail('  Ada@Ejemplo.COM ') → 'ada@ejemplo.com'
 // -------------------------------------------------------------
 export function normalizarEmail(email) {
-  // Escribe tu código aquí
+  return email.trim().toLowerCase();
 }
 
 // =============================================================

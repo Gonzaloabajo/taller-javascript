@@ -5,7 +5,7 @@ console.log('Hola, mundo');
 
 // console.log muestra en la terminal lo que pongas entre los paréntesis.
 // Prueba a cambiar este texto por tu nombre, guarda (Ctrl + S) y vuelve a ejecutarlo.
-console.log('Me llamo …');
+console.log('Me llamo Gonzalo');
 
 // También sabe hacer cuentas:
 console.log(2 + 3);
