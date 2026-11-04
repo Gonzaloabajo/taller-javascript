@@ -9,7 +9,7 @@
 // y devuelva su triple.
 //   triple(4) → 12
 // -------------------------------------------------------------
-export const triple = null;
+export const triple = (numero) => numero * 3;
 
 // -------------------------------------------------------------
 // Ejercicio 2 · Valor por defecto
@@ -18,8 +18,8 @@ export const triple = null;
 //   saludo()      → 'Hola, invitado'
 // Pista: puedes cambiar la línea de los parámetros.
 // -------------------------------------------------------------
-export function saludo(nombre) {
-  // Escribe tu código aquí
+export function saludo(nombre = 'invitado') {
+  return `Hola, ${nombre}`;
 }
 
 // -------------------------------------------------------------
@@ -30,7 +30,7 @@ export function saludo(nombre) {
 //   aplicar((t) => t.toUpperCase(), 'hola') → 'HOLA'
 // -------------------------------------------------------------
 export function aplicar(fn, valor) {
-  // Escribe tu código aquí
+  return fn(valor);
 }
 
 // -------------------------------------------------------------
@@ -41,7 +41,13 @@ export function aplicar(fn, valor) {
 //   aplicarNVeces((x) => x * 2, 0, 5)       → 5
 // -------------------------------------------------------------
 export function aplicarNVeces(fn, n, valor) {
-  // Escribe tu código aquí
+  let resultado = valor;
+
+  for (let i = 0; i < n; i++) {
+    resultado = fn(resultado);
+  }
+
+  return resultado;
 }
 
 // -------------------------------------------------------------
@@ -53,7 +59,7 @@ export function aplicarNVeces(fn, n, valor) {
 //   triple(5) → 15
 // -------------------------------------------------------------
 export function crearMultiplicador(factor) {
-  // Escribe tu código aquí
+  return (numero) => numero * factor;
 }
 
 // -------------------------------------------------------------
@@ -66,7 +72,12 @@ export function crearMultiplicador(factor) {
 //   contador() → 2
 // -------------------------------------------------------------
 export function crearContador() {
-  // Escribe tu código aquí
+  let contador = 0;
+
+  return function () {
+    contador++;
+    return contador;
+  };
 }
 
 // -------------------------------------------------------------
@@ -76,7 +87,7 @@ export function crearContador() {
 //   sumarUnoYDoblar(3) → 8   (primero 3 + 1 = 4, después 4 * 2 = 8)
 // -------------------------------------------------------------
 export function componer(f, g) {
-  // Escribe tu código aquí
+  return (x) => f(g(x));
 }
 
 // -------------------------------------------------------------
@@ -89,7 +100,17 @@ export function componer(f, g) {
 //   iniciar() → no muestra nada y devuelve 'ok'
 // -------------------------------------------------------------
 export function unaSolaVez(fn) {
-  // Escribe tu código aquí
+  let ejecutada = false;
+  let resultado;
+
+  return function (...args) {
+    if (!ejecutada) {
+      resultado = fn.apply(this, args);
+      ejecutada = true;
+    }
+
+    return resultado;
+  };
 }
 
 // =============================================================
